@@ -7,8 +7,6 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 
-#define C_S(kc)   kc | 0x0100 | 0x0200 // `Ctrl + Shift + kc`(= `kc | 0x1400`)
-
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
   EPRM,
@@ -49,16 +47,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MO(SYMB),       LALT(KC_LSFT), KC_LGUI,KC_LGUI,KC_LEFT,
                                                ALT_T(KC_APP),  KC_LGUI,
                                                                KC_LGUI,
-                                               KC_SPC,MO(SYMB),C_S(KC_SCLN),
+                                               KC_SPC,MO(SYMB),KC_LANG2,
         // right hand
-             KC_NO,       KC_7,   KC_8,    KC_9,   KC_0,   KC_MINUS, KC_BSPC,
-             KC_TRNS,     KC_Y,   KC_U,    KC_I,   KC_O,   KC_P,     KC_BSLS,
-                          KC_H,   KC_J,    KC_K,   KC_L,   KC_SCLN,  KC_ENT,
-             KC_ENT,      KC_N,   KC_M,    KC_COMM,KC_DOT, KC_SLSH,  KC_RSFT,
-                                  KC_LEFT, KC_UP  ,KC_DOWN,KC_RIGHT, S(KC_MINUS),
-             KC_LALT,     CTL_T(KC_ESC),
+             KC_NO,    KC_7,   KC_8,    KC_9,   KC_0,   KC_MINUS, KC_BSPC,
+             KC_TRNS,  KC_Y,   KC_U,    KC_I,   KC_O,   KC_P,     KC_BSLS,
+                       KC_H,   KC_J,    KC_K,   KC_L,   KC_SCLN,  KC_ENT,
+             KC_ENT,   KC_N,   KC_M,    KC_COMM,KC_DOT, KC_SLSH,  KC_RSFT,
+                               KC_LEFT, KC_UP  ,KC_DOWN,KC_RIGHT, S(KC_MINUS),
+             KC_LALT,  CTL_T(KC_ESC),
              KC_RGUI,
-             C_S(KC_J), MO(SYMB), KC_SPC
+             KC_LANG1, MO(SYMB), KC_SPC
     ),
 /* Keymap 1: Symbol Layer
  *
